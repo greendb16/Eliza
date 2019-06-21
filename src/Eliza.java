@@ -22,7 +22,7 @@ public class Eliza {
 
 
 private static void replace(){
-
+    System.out.print("Why do you think ");
         for(int i =0; i<arrString.size(); i++){
 
             if(arrString.get(i).equalsIgnoreCase("I")){
