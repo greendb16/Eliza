@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Eliza {
@@ -6,14 +7,15 @@ public class Eliza {
     private static String input;
     private static Scanner key = new Scanner(System.in);
     private static ArrayList<String> arrString= new ArrayList<>();
+    private static Random rand = new Random();
 
 
 
     public static void main(String[]args){
-        System.out.println("Hello.  What is your problem?");
+        System.out.println("Hello.  What is your problem today?");
         do {
             input();
-            replace();
+            response();
         }
         while(!input.equalsIgnoreCase("q") && !input.equalsIgnoreCase("I am feeling great"));
 
@@ -49,4 +51,21 @@ private static void input(){
     for(String word: input.split(" ")){
         arrString.add(word);
 }
-}}
+}
+private static void response(){
+        int response = rand.nextInt(3);
+        switch(response){
+            case 0:
+                System.out.println("Many of my patients tell me the same thing.");
+                break;
+            case 1:
+                System.out.println("Please tell me more.");
+            case 2:
+                System.out.println("I tis getting late, maybe we had better quit.");
+                break;
+            default:
+                replace();
+        }
+
+}
+}
