@@ -53,15 +53,16 @@ private static void input(){
 }
 }
 private static void response(){
-        int response = rand.nextInt(3);
+        int response = rand.nextInt(6);
         switch(response){
             case 0:
                 System.out.println("Many of my patients tell me the same thing.");
                 break;
             case 1:
                 System.out.println("Please tell me more.");
+                break;
             case 2:
-                System.out.println("I tis getting late, maybe we had better quit.");
+                System.out.println("I think it is getting late, maybe we had better quit.");
                 break;
             default:
                 replace();
