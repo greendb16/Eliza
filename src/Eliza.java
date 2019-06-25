@@ -6,7 +6,7 @@ public class Eliza {
 
     private static String input = "";
     private static boolean pig;
-    private static String startingCons = "";
+    private static char startingCons;
     private static Scanner key = new Scanner(System.in);
     public static ArrayList<String> arrString= new ArrayList<>();
     private static Random rand = new Random();
@@ -40,7 +40,7 @@ private static void replace(){
     for(int i =4; i<arrString.size(); i++){
 
             if(arrString.get(i).equalsIgnoreCase("I")){
-                arrString.set(i, "You");
+                arrString.set(i, "you");
             }
             if(arrString.get(i).equalsIgnoreCase("me")){
                 arrString.set(i, "you");
@@ -143,25 +143,26 @@ private static void pigLatin(){
 
 
             if(piggy.equalsIgnoreCase("a") || piggy.equalsIgnoreCase("e") || piggy.equalsIgnoreCase("i") || piggy.equalsIgnoreCase("o") || piggy.equalsIgnoreCase("u")){
-                for(char word:pigArray) {
-                    System.out.print(pigArray[word]);
+                for(int p=0; i<pigArray.length;p++) {
+                    System.out.print(pigArray[p]);
                 }
                 System.out.println("tay");
             }
 
-//PROBLEM HERE LINE 156!!!!!!!!!!
             else{
-                startingCons =String.valueOf(pigArray[0]);
-            for(int j=0; j<pigArray.length;j++){
-                char x =pigArray[j+1];
-                pigArray[j] = x;
+                startingCons = pigArray[0];
+            for(int j=0; j<pigArray.length-1;j++){
+                pigArray[j] = pigArray[j+1];
+//                char x =pigArray[j+1];
+//                pigArray[j] = x;
             }
-            for(char word:pigArray) {
-                System.out.print(pigArray[word]);
+            pigArray[pigArray.length-1] =startingCons;
+            for( i=0; i<=pigArray.length-1;i++) {
+                System.out.print(pigArray[i]);
             }
 
-                System.out.println(startingCons);
-                arrString.set(i,arrString.get(i) +"ay");
+                System.out.println("ay");
+                //arrString.set(i,arrString.get(i) +"ay");
 
             }
             }
